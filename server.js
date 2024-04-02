@@ -1,29 +1,14 @@
 const express = require('express');
-const bodyparser = require('body-parser');
+const app = express();
 require('dotenv').config();
 
+const db  = require('./db.js');
 
-const User = require('./models/userModel.js');
+app.get('/',(req,res)=>{
+    res.send("kunal pawar");
 
+});
 
-const app = express();
-app.use(bodyparser.json());
-const PORT =  process.env.PORT || 3000;
-
-app.get('/api/v1/user',(req,res)=>{
-    const userdata =  User.find();
-    res.json(userdata);
+app.listen(process.env.PORT,()=>{
+    console.log("listening port on 3000");
 })
-
-app.post('/api/v1/user',(req,res)=>{
-    const data = User.create(req.body);
-
-    res.status(201).json({
-        Message:"success"
-    })
-})
-
-app.listen(PORT ,()=>{
-    console.log('listening on port'+PORT);
-})
-
