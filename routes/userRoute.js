@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel.js');
 const {jwtAuthMiddleware,generateToken} = require('../jwt.js');
+const  logger = require('../logger.js');
 
 router.post('/Registration', async(req,res)=>{
     try{
@@ -25,7 +26,7 @@ router.post('/Registration', async(req,res)=>{
            response
          });
     }catch(err){
-     console.error(err);
+      logger.error(err.stack);
      res.status(500).json({
         error:"internal server Error"
      })
@@ -60,7 +61,7 @@ router.post('/login',async(req,res)=>{
       })
 
     }catch(err){
-       console.log(err);
+      logger.error(err.stack);
        res.status(500).json({
         status:"fail",
         error:"Internal server error"
@@ -80,7 +81,7 @@ router.get('/',async(req,res)=>{
           data:data
       })
     }catch(err){
-      console.error(err);
+      logger.error(err.stack);
       res.status(500).json({
       error:"internal server Error"
    })
@@ -110,7 +111,7 @@ router.put('/:id',jwtAuthMiddleware,async(req,res)=>{
         data:response
     })
     }catch(err){
-      console.error(err);
+      logger.error(err.stack);
       res.status(500).json({
       error:"internal server Error"
    })
