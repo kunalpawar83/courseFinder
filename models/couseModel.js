@@ -4,7 +4,8 @@ const  mongoose = require('mongoose');
 const couseSc = new mongoose.Schema({
     name:{
         type:String,
-        required:[true,'Please provide user name']
+        required:[true,'Please provide user name'],
+        unique: true
     },
     category: {
       type: String,

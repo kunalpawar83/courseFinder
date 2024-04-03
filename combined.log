@@ -6,3 +6,23 @@
 {"level":"info","message":"POST /user/Registration","timestamp":"2024-04-03T11:06:55.257Z"}
 {"level":"error","message":"MongoServerError: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"kunaldada1234@gmail.com\" }\n    at InsertOneOperation.execute (C:\\coding\\aeonaxy\\node_modules\\mongodb\\lib\\operations\\insert.js:48:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async executeOperationAsync (C:\\coding\\aeonaxy\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:106:16)","timestamp":"2024-04-03T11:06:55.346Z"}
 {"level":"info","message":"PUT /user/660cd6c452776b14b6278a8c","timestamp":"2024-04-03T11:08:49.381Z"}
+{"level":"info","message":"POST /user/login","timestamp":"2024-04-03T12:06:33.480Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:06:54.042Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:07:02.895Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:07:03.953Z"}
+{"level":"info","message":"POST /user/login","timestamp":"2024-04-03T12:07:11.385Z"}
+{"level":"info","message":"POST /user/login","timestamp":"2024-04-03T12:07:12.368Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:07:25.342Z"}
+{"level":"error","message":"ValidationError: Course validation failed: category: `fronted` is not a valid enum value for path `category`.\n    at Document.invalidate (C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\document.js:3200:32)\n    at C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\document.js:2993:17\n    at C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\schemaType.js:1370:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-04-03T12:07:25.385Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:07:36.467Z"}
+{"level":"error","message":"ValidationError: Course validation failed: category: `fronted` is not a valid enum value for path `category`.\n    at Document.invalidate (C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\document.js:3200:32)\n    at C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\document.js:2993:17\n    at C:\\coding\\aeonaxy\\node_modules\\mongoose\\lib\\schemaType.js:1370:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2024-04-03T12:07:36.487Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:08:20.688Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:08:33.501Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:08:44.947Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:08:55.838Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:09:53.079Z"}
+{"level":"info","message":"GET /course","timestamp":"2024-04-03T12:10:03.910Z"}
+{"level":"info","message":"GET /course?duration=6","timestamp":"2024-04-03T12:11:24.737Z"}
+{"level":"info","message":"GET /course?duration=8","timestamp":"2024-04-03T12:18:00.366Z"}
+{"level":"info","message":"POST /course","timestamp":"2024-04-03T12:19:32.353Z"}
+{"level":"info","message":"GET /course?duration=6","timestamp":"2024-04-03T12:19:52.065Z"}

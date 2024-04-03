@@ -9,7 +9,7 @@ const router = express.Router();
 // GET  ROUTES TO GET DATA
 router.get('/',async(req,res)=>{
     try{
-      const data = await Course.find();
+      const data = await Course.find(req.query);
       console.log('data fetched');
       res.status(200).json({
           status:"success",
