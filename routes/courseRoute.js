@@ -21,11 +21,10 @@ router.get('/',async(req,res)=>{
 })
 
 router.post('/:id', async(req,res)=>{
-     const userData = req.params.id;
-      const data = userData.role;
-      console.log(data);
+     const userData = await User.findById(req.params.id);
+      console.log(userData.role);
      res.status(201).json({
-         data:data
+         data:userData
      })
 })
 

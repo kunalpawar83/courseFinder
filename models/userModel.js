@@ -37,16 +37,33 @@ const userSc = new mongoose.Schema({
 });
 
 userSc.pre('save', async function(next) {
-  // Only run this function if password was actually modified
-  if (!this.isModified('password')) return next();
+    const user = this;
+    if(!user.isModified('password')){
+      return next();
+    }
+    try{
+      const salt  = await bcrypt.genSalt(9);
 
-  // Hash the password with cost of 12
-  this.password = await bcrypt.hash(this.password, 12);
+      const hashedPassword = await bcrypt.hash(user.password,salt);
 
-  // Delete passwordConfirm field
-  this.passwordConfirm = undefined;
-  next();
+      user.password = hashedPassword;
+      // Delete passwordConfirm field
+      this.passwordConfirm = undefined;
+      next();
+    }catch(err){
+          return next(err)
+    }
+  
 });
+
+userSc.methods.comparePassword = async function(candidatePassword){
+   try{
+         const isMatch = await bcrypt.compare(candidatePassword,this.password)
+         return isMatch;
+   }catch(err){
+    throw err;
+   }
+}
 
 const User = mongoose.model('User',userSc);
 module.exports =User;

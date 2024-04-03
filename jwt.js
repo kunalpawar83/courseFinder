@@ -28,5 +28,14 @@ const jwtAuthMiddleware =(req,res,next)=>{
 
      }
 };
+ 
+// Function to generate JWT token
+const generateToken=(userdata)=>{
 
-module.exports = jwtAuthMiddleware;
+    // Generate a new JWT token using user data
+     return jwt.sign(userdata,process.env.JWT_SECRET);
+
+    }
+
+
+module.exports = {jwtAuthMiddleware,generateToken};
